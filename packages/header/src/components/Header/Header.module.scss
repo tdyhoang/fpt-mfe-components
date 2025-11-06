@@ -1,0 +1,892 @@
+.headerWrapper {
+  :global {
+    font-family: "Be Vietnam Pro", sans-serif;
+
+    button,
+    input {
+      overflow: visible;
+      margin: 0;
+      font: inherit;
+      color: inherit;
+    }
+
+    a {
+      background-color: transparent;
+      color: #4564ed;
+      text-decoration: none;
+      &:active,
+      &:hover {
+        outline: 0;
+      }
+    }
+
+    img {
+      border: 0;
+      vertical-align: middle;
+    }
+
+    ul {
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding-left: 0;
+      list-style: none;
+      ul {
+        margin-bottom: 0;
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      user-select: none;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+
+    .collapse {
+      display: none;
+      &.in {
+        display: block;
+      }
+    }
+
+    .dropdown,
+    .dropup {
+      position: relative;
+    }
+    .dropdown-toggle:focus {
+      outline: 0;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      display: none;
+      float: left;
+      min-width: 160px;
+      padding: 5px 0;
+      margin: 2px 0 0;
+      font-size: 14px;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    }
+    .dropdown-menu > li > a {
+      display: block;
+      padding: 3px 20px;
+      clear: both;
+      font-weight: 400;
+      line-height: 1.42857143;
+      color: #333;
+      white-space: nowrap;
+      &:focus,
+      &:hover {
+        color: #262626;
+        text-decoration: none;
+        background-color: #f5f5f5;
+      }
+    }
+    .open > .dropdown-menu {
+      display: block;
+    }
+
+    .nav {
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+      > li {
+        position: relative;
+        display: block;
+        > a {
+          position: relative;
+          display: block;
+          padding: 10px 15px;
+          &:focus,
+          &:hover {
+            text-decoration: none;
+            background-color: #eee;
+          }
+        }
+      }
+      .open > a,
+      .open > a:focus,
+      .open > a:hover {
+        background-color: #eee;
+        border-color: #337ab7;
+      }
+    }
+
+    .navbar {
+      position: relative;
+      min-height: 50px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+    }
+    @media (min-width: 768px) {
+      .navbar-header {
+        float: left;
+      }
+    }
+    .navbar-collapse {
+      padding-right: 15px;
+      padding-left: 15px;
+      overflow-x: visible;
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    @media (min-width: 768px) {
+      .navbar-collapse {
+        width: auto;
+        border-top: 0;
+        box-shadow: none;
+        &.collapse {
+          display: block !important;
+          height: auto !important;
+          padding-bottom: 0;
+          overflow: visible !important;
+        }
+      }
+    }
+
+    .container {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    @media (min-width: 768px) {
+      .container {
+        width: 750px;
+      }
+    }
+    @media (min-width: 992px) {
+      .container {
+        width: 970px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px;
+      }
+    }
+
+    .container > .navbar-collapse,
+    .container > .navbar-header {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+    @media (min-width: 768px) {
+      .container > .navbar-collapse,
+      .container > .navbar-header {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    .navbar-static-top {
+      z-index: 1000;
+      border-width: 0 0 1px;
+      @media (min-width: 768px) {
+        border-radius: 0;
+      }
+    }
+
+    .navbar-brand {
+      float: left;
+      height: 50px;
+      padding: 15px 15px;
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    .navbar-toggle {
+      position: relative;
+      float: right;
+      padding: 9px 10px;
+      margin: 8px 15px 8px 0;
+      background-color: transparent;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      .icon-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+      }
+      .icon-bar + .icon-bar {
+        margin-top: 4px;
+      }
+    }
+    @media (min-width: 768px) {
+      .navbar-toggle {
+        display: none;
+      }
+    }
+
+    .navbar-nav {
+      margin: 7.5px -15px;
+      > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 20px;
+      }
+      @media (min-width: 768px) {
+        float: left;
+        margin: 0;
+        > li {
+          float: left;
+          > a {
+            padding-top: 15px;
+            padding-bottom: 15px;
+          }
+        }
+      }
+    }
+
+    .navbar-default {
+      background-color: #f8f8f8;
+      border-color: #e7e7e7;
+      .navbar-brand {
+        color: #777;
+      }
+      .navbar-nav > li > a {
+        color: #777;
+      }
+      .navbar-nav > .active > a,
+      .navbar-nav > .active > a:focus,
+      .navbar-nav > .active > a:hover {
+        color: #555;
+        background-color: #e7e7e7;
+      }
+      .navbar-nav > .open > a,
+      .navbar-nav > .open > a:focus,
+      .navbar-nav > .open > a:hover {
+        color: #555;
+        background-color: #e7e7e7;
+      }
+      .navbar-toggle {
+        border-color: #ddd;
+        &:focus,
+        &:hover {
+          background-color: #ddd;
+        }
+        .icon-bar {
+          background-color: #888;
+        }
+      }
+    }
+
+    .label {
+      display: inline;
+      padding: 0.2em 0.6em 0.3em;
+      font-size: 75%;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      border-radius: 0.25em;
+    }
+
+    .container::after,
+    .container::before,
+    .nav::after,
+    .nav::before,
+    .navbar-collapse::after,
+    .navbar-collapse::before,
+    .navbar-header::after,
+    .navbar-header::before,
+    .navbar::after,
+    .navbar::before {
+      display: table;
+      content: " ";
+    }
+    .container::after,
+    .nav::after,
+    .navbar-collapse::after,
+    .navbar-header::after,
+    .navbar::after {
+      clear: both;
+    }
+
+    a,
+    a:hover,
+    a:active,
+    a:focus {
+      color: #4564ed;
+      text-decoration: none;
+    }
+
+    .header_area {
+      width: 100%;
+      background-color: #fff;
+      position: relative;
+      z-index: 999;
+      transition: all 0.5s ease-in-out;
+      box-shadow: 0 1px 2px 0 rgba(66, 66, 66, 0.2);
+    }
+
+    .header-menu .header-top {
+      background: #191e67;
+      height: 36px;
+    }
+
+    .header-menu .header-top .head-top--contain {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .header-menu .header-top .links-top {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 32px;
+      li {
+        list-style: none;
+        margin: 0;
+        a {
+          color: #dde4fc;
+          font-size: 14px;
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+          &.active,
+          &:hover {
+            color: #fff;
+            border-bottom: 1px solid #fff;
+          }
+        }
+      }
+    }
+
+    .header-menu .header-top .login {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      line-height: 36px;
+      a {
+        color: #dde4fc;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        margin-left: 32px;
+        &:hover {
+          text-decoration: none;
+        }
+        .icon-profile {
+          margin-right: 8px;
+          width: 20px;
+        }
+      }
+      .choose-location-btn {
+        color: #dde4fc;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        cursor: pointer;
+        img {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .headmenu-width {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      position: relative;
+      width: 100%;
+    }
+
+    .nav-logofpt .navbar-brand {
+      padding: 0;
+      height: auto;
+      a img {
+        height: 36px;
+      }
+    }
+
+    .custom-menu-links {
+      padding: 0;
+      .navbar-nav > li > a {
+        line-height: 40px;
+        font-weight: 600;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        padding: 0 32px;
+        color: #3d3d3d;
+        height: 70px;
+        .icon-dropdown-mn {
+          background: url("https://fpt.vn/fontend_v2.0_2024/assets/images/icon-drop-menu.svg")
+            left 2px no-repeat;
+          background-size: 40px;
+          width: 20px;
+          height: 20px;
+          margin-left: 8px;
+          display: inline-block;
+          transition: transform 0.2s ease-in-out;
+        }
+      }
+
+      .navbar-nav > li.open > a .icon-dropdown-mn {
+        transform: rotate(180deg);
+      }
+
+      .navbar-nav > li.dropdown.open {
+        position: static;
+      }
+
+      .navbar-nav > li.dropdown.open > .dropdown-menu {
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0 0 16px 16px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 40px 40px 0;
+        border: 0;
+        background-color: #fdfdfd;
+        top: 100%;
+        border-top: 1px solid #f0f0f0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.075);
+      }
+
+      .navbar-nav > li > .dropdown-menu > li {
+        padding-bottom: 40px;
+        flex: 0 0 25%;
+      }
+
+      .navbar-nav .title-product-mn {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        color: #3d3d3d;
+        margin-bottom: 18px;
+        .title-product {
+          font-size: 16px;
+          padding-left: 18px;
+          line-height: 28px;
+        }
+        .icon-product img {
+          width: 28px;
+          height: 28px;
+          object-fit: contain;
+        }
+      }
+
+      .navbar-nav .list-child-menu li {
+        margin-bottom: 12px;
+        padding-left: 46px;
+        a {
+          color: #2d2d2d;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 22px;
+          &:hover {
+            color: #ff701d;
+          }
+          .new-label {
+            background: #ff2156;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 20px;
+            padding: 0 6px;
+            border-radius: 50px;
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+
+    .nav--search-menu {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      #toggle-search {
+        background: url("https://fpt.vn/fontend_v2.0_2024/assets/images/icon-search.svg") -1px
+          center no-repeat;
+        background-size: auto 44px;
+        width: 38px;
+        height: 50px;
+        border: 0;
+      }
+    }
+
+    .search-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      .text-search {
+        width: calc(100% - 38px);
+        height: 100%;
+        border: none;
+        font-size: 26px;
+        color: #343a40;
+        text-align: center;
+        font-weight: 500;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .menu-head.navbar-default {
+      background: transparent;
+      box-shadow: none !important;
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .wrap-location,
+    .login-mobiles,
+    .second-link_mobile {
+      display: none;
+    }
+
+    @media (max-width: 991px) {
+      .header-top {
+        display: none;
+      }
+      .headmenu-width {
+        padding: 0;
+      }
+      .menu-container {
+        height: 54px;
+      }
+      .navbar-header {
+        width: 100%;
+        border-bottom: 1px solid #e7e7e7;
+      }
+
+      .nav-logofpt {
+        .navbar-brand {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 54px;
+          display: flex;
+          align-items: center;
+          a img {
+            height: 28px;
+          }
+        }
+        .navbar-toggle {
+          display: block;
+          margin: 0;
+          height: 54px;
+          padding: 0 15px;
+          .icon-hamburger {
+            background: url("https://fpt.vn/fontend_v2.0_2024/assets/images/nav-toggle-icon.svg")
+              center no-repeat;
+            background-size: contain;
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+
+      .nav--search-menu {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 54px;
+        width: 54px;
+        #toggle-search {
+          width: 54px;
+          height: 54px;
+          background-position: center;
+        }
+      }
+
+      .custom-menu-links {
+        position: fixed;
+        top: 54px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 54px);
+        background: #fff;
+        &.in {
+          overflow-y: auto;
+        }
+
+        .navbar-nav {
+          margin: 0;
+          padding: 0 15px;
+          > li > a {
+            padding: 0;
+            line-height: 50px;
+            height: auto;
+            justify-content: space-between;
+          }
+          > li > .dropdown-menu {
+            display: none;
+            padding: 10px 15px;
+            box-shadow: none;
+            border-top: none;
+            background-color: #f8f8f8;
+            > li {
+              padding-bottom: 20px;
+            }
+          }
+          > li.open > .dropdown-menu {
+            display: block;
+          }
+        }
+
+        .login-mobiles,
+        .second-link_mobile {
+          display: block;
+        }
+
+        .login-mobiles {
+          border-bottom: 1px solid #eee;
+          a {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 70px;
+            img {
+              margin-right: 8px;
+              width: 22px;
+            }
+          }
+        }
+
+        .second-link_mobile a {
+          line-height: 50px;
+        }
+      }
+    }
+
+    .overlay {
+      position: fixed;
+      top: 106px; // Vừa bằng chiều cao của header (36px + 70px)
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 998; // Nằm dưới header (z-index 999) nhưng trên content
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0s 0.3s;
+
+      &.isOpen {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease, visibility 0s 0s;
+      }
+    }
+
+    // Ghi đè style của Bootstrap để tạo Mega Menu
+    // Chỉ áp dụng ở màn hình desktop
+    @media (min-width: 992px) {
+      .header_area .nav > li.dropdown.open {
+        position: static; // Rất quan trọng: để menu con không bị giới hạn bởi `li`
+      }
+
+      .header_area .nav > li.dropdown.open > .dropdown-menu {
+        display: flex; // Dàn các mục con theo hàng ngang
+        flex-wrap: wrap; // Cho phép xuống dòng nếu không đủ chỗ
+        width: 100%; // Chiếm toàn bộ chiều rộng
+        left: 0; // Căn trái
+        right: 0; // Căn phải
+        margin-top: 0;
+        padding: 40px;
+        border-radius: 0 0 16px 16px; // Bo góc dưới
+        border-top: 1px solid #f0f0f0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.075);
+      }
+
+      // Định dạng các cột trong Mega Menu
+      .header_area .dropdown-menu > .menu-item-lv-2 {
+        flex: 0 0 25%; // Mỗi cột chiếm 25% chiều rộng (4 cột)
+        padding: 0 15px;
+        margin-bottom: 40px; // Khoảng cách giữa các hàng
+      }
+
+      // Style cho các menu dropdown nhỏ hơn (Ưu đãi, Hỗ trợ, Khác)
+      .header_area .nav > li.other-link.dropdown.open .dropdown-menu {
+        display: block; // Trở về dạng block bình thường
+        width: 250px;
+        left: auto;
+        right: 0; // Căn phải
+        padding: 16px 24px;
+      }
+
+      .header_area .other-link .dropdown-menu > .menu-item-lv-2 {
+        flex: none; // Không áp dụng flex cho các menu nhỏ
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+
+    // Trên mobile, menu con sẽ là block để xổ xuống kiểu accordion
+    @media (max-width: 991px) {
+      .custom-menu-links .navbar-nav > li > .dropdown-menu {
+        display: none; // Mặc định ẩn
+        padding: 15px 0 15px 30px; // Thụt vào so với menu cha
+        box-shadow: none;
+        border: none;
+        background-color: #f8f9fa; // Màu nền nhẹ để phân biệt
+      }
+      .custom-menu-links .navbar-nav > li.open > .dropdown-menu {
+        display: block; // Chỉ hiện khi li cha có class .open
+      }
+      .custom-menu-links .navbar-nav > li > .dropdown-menu > li {
+        padding-bottom: 15px; // Khoảng cách giữa các item con
+      }
+    }
+
+    @media (min-width: 992px) {
+      .menu-head.navbar-default .navbar-nav > .open > a,
+      .menu-head.navbar-default .navbar-nav > .open > a:focus,
+      .menu-head.navbar-default .navbar-nav > .open > a:hover {
+        background-color: transparent;
+        box-shadow: none;
+        background-image: none;
+      }
+    }
+
+    /* [FIX 2] Canh lề phải cho các dropdown menu "other-link" */
+    @media (min-width: 992px) {
+      .navbar-nav > li.other-link.dropdown.open .dropdown-menu {
+        left: auto;
+        right: 0; // Quan trọng: căn lề phải
+      }
+    }
+
+    /* [FIX 3] Giao diện tìm kiếm trên DESKTOP */
+    @media (min-width: 992px) {
+      .menu-container {
+        transition: all 0.3s ease;
+      }
+      .custom-menu-links {
+        transition: all 0.3s ease;
+      }
+
+      // Khi thanh search mở
+      &.desktopSearchActive {
+        .custom-menu-links {
+          transform: translateX(-250px); // Đẩy menu sang trái
+          opacity: 0;
+        }
+        .search-bar {
+          display: block;
+          width: 350px; // Chiều rộng của thanh search
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      // Trạng thái mặc định của thanh search
+      .search-bar {
+        position: absolute;
+        right: 50px; // Vị trí ban đầu
+        top: 0;
+        height: 70px;
+        width: 0; // Ban đầu không có chiều rộng
+        display: flex;
+        align-items: center;
+        background: #fff;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      .search-bar .text-search {
+        width: 100%;
+        height: 40px;
+        text-align: left;
+        font-size: 16px;
+        padding-left: 15px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+      }
+    }
+
+    /* [FIX 3] Giao diện tìm kiếm trên MOBILE */
+    @media (max-width: 991px) {
+      .navbar-header.nav-logofpt {
+        transition: all 0.3s ease;
+      }
+
+      // Khi search trên mobile được kích hoạt
+      &.mobileSearchActive {
+        .navbar-header.nav-logofpt {
+          justify-content: flex-end; // Đẩy logo sang phải
+        }
+        .nav-logofpt .navbar-brand {
+          opacity: 0; // Ẩn logo FPT
+        }
+        .nav-logofpt .navbar-toggle {
+          opacity: 0; // Ẩn nút hamburger
+          pointer-events: none;
+        }
+        .headmenu-width .menu-container .search-bar {
+          left: 50px; // Vị trí của input
+          width: calc(100% - 100px);
+          opacity: 1;
+        }
+        #toggle-search-close {
+          display: block; // Hiện nút X
+        }
+      }
+
+      // Nút X để đóng search trên mobile
+      #toggle-search-close {
+        display: none; // Mặc định ẩn
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: url("https://fpt.vn/assets/frontend/img/icon/icon-close-search.svg")
+          center no-repeat;
+        width: 24px;
+        height: 24px;
+        border: none;
+      }
+    }
+
+    /* [FIX 4] Style cho menu con trên mobile */
+    @media (max-width: 991px) {
+      .custom-menu-links .navbar-nav > li > .dropdown-menu {
+        background-color: #f8f9fa;
+        padding-left: 30px; // Thụt lề các mục con
+        box-shadow: none;
+        border: none;
+      }
+    }
+  }
+}
