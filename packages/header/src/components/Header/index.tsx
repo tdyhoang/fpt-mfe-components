@@ -84,8 +84,8 @@ const Header: React.FC = () => {
     return (
       <li
         className={liClassName}
-        onMouseEnter={isDesktop ? () => handleMenuInteraction(key) : undefined}
-        onMouseLeave={isDesktop ? handleMouseLeave : undefined}
+        onMouseEnter={() => isDesktop && handleMenuInteraction(key)}
+        onMouseLeave={() => isDesktop && handleMouseLeave()}
       >
         <a
           href="#"
@@ -742,7 +742,6 @@ const Header: React.FC = () => {
                     onClick={handleSearchToggle}
                   ></button>
                 </div>
-                <button id="toggle-search-close" onClick={closeSearch}></button>
                 <form
                   action="https://fpt.vn/vi/tim-kiem"
                   id="searchBar"
