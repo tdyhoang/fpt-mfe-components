@@ -1,8 +1,7 @@
 import r2wc from "@r2wc/react-to-web-component";
 
-import Header from "./components/Header";
-import "./index.css";
+import HeaderWebComponent from "./HeaderWebComponent";
 
-const FptHeaderWC = r2wc(Header);
+const FptHeaderWC = r2wc(HeaderWebComponent);
 
 customElements.define("fpt-header", FptHeaderWC);

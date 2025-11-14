@@ -1,0 +1,306 @@
+#back-to-top>img {
+    width: 32px;
+}
+
+.custom-banner.homepage {
+    width: 100%;
+}
+
+.col-data .middle {
+    box-shadow: none;
+}
+
+.title-black {
+    display: flex;
+}
+
+.title-black h3 {
+    margin-left: 10px;
+}
+
+header {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    z-index: 999;
+    /* top: 0px; */
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    box-shadow: 0 1px 2px 0 rgba(66, 66, 66, .3);
+}
+
+.always-on {
+    position: fixed;
+    right: 10px;
+    bottom: 75px;
+    z-index: 99;
+}
+
+.always-on>div {
+    margin: 6px 0;
+    /* cursor: pointer; */
+    clear: both;
+    display: flex;
+}
+
+.fix-pad {
+    /* padding-left: 0;
+    padding-right: 0; */
+}
+
+.always-on .group-call.fix-pad,
+.always-on .group-chat.fix-pad,
+.always-on .group-cart.fix-pad {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.always-on>div a {
+    background: #191E67;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    transition: opacity .2s ease-out;
+    align-items: center;
+    justify-content: center;
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    border-radius: 90px;
+}
+
+.always-on>div a:hover {
+    background: #4564ED;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    /* display: flex !important; */
+    display: none !important;
+}
+
+#back-to-top:hover {
+    background: #edeef5;
+}
+
+.bg-gray {
+    padding: 0;
+}
+
+.bg-gray {
+    width: 65px;
+    height: 65px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 40px -4px rgba(17, 17, 17, 0);
+    -moz-box-shadow: 0 0 40px -4px rgba(17, 17, 17, 0);
+    box-shadow: 0 0 40px -4px rgba(17, 17, 17, 0);
+    z-index: 1111;
+    position: relative;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 99;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    cursor: pointer;
+    /* transition: opacity .2s ease-out; */
+    opacity: 0;
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    border-radius: 90px;
+    background: #fff url('../frontend/img/icon/top.svg') no-repeat center center / 32px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #232A85;
+}
+
+#back-to-top:hover {
+    background: #4564ED url('../frontend/img/icon/top-white.svg') no-repeat center center / 32px !important;
+    border: 2px solid #4564ED;
+    opacity: 1 !important;
+}
+
+.news-block-home a img.no-image {
+    object-fit: contain !important;
+}
+
+#back-to-top>img {
+    display: none;
+}
+
+
+/* check smart banner */
+
+header.header_area_top {
+    /* top: 0 !important; */
+    top: 0;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+
+/* custom button .always-on on mobile  */
+
+.always-on,
+.back-to-top {
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+}
+
+#home_local_all_net .add_mgl {
+    margin-left: 12.5%;
+}
+
+.breadcrumb-service li {
+    overflow: hidden;
+}
+
+
+
+/* custom trang chính danh sách tin tức */
+.large-featured-img-wrapper {
+    position: relative;
+}
+.wrap-news-large .i-new {
+    width: 34px;
+    right: 0;
+}
+/* end custom trang chính danh sách tin tức */
+@media screen and (min-width: 1024px) {
+    .featured-img-wrapper img {
+        height: 212px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .featured-img-wrapper img {
+        height: calc(120px + 6vw);
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .secondary-link {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    /* .always-on>div.group-cart,
+    .always-on>div.group-call,
+    .always-on>div.group-chat {
+        position: unset !important;
+        border-radius: 50%;
+    } */
+}
+
+@media screen and (max-width: 767px) {
+    .featured-img-wrapper img {
+        height: auto;
+        max-height: 330px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .always-on>div.group-call {
+        bottom: 0px;
+        right: 0;
+        width: auto;
+        position: absolute;
+    }
+    .always-on>div.group-chat {
+        bottom: 73px;
+        right: 0;
+        width: auto;
+        position: absolute;
+    }
+    .always-on>div.group-cart {
+        bottom: 146px;
+        right: 0;
+        width: auto;
+        position: absolute;
+    }
+    .always-on>div {
+        margin: 4px 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .js_always_on_bottom,
+    ._js_back_top {
+        transform: translateY(-160px);
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .always-on {
+        right: 10px;
+        bottom: 79px;
+    }
+}
+
+@media (max-width: 479px) {
+    .always-on>div.group-chat>.bg-gray,
+    .always-on>div.group-call>.bg-gray,
+    .always-on>div.group-cart>.bg-gray {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+/*  - điều chỉnh bộ 3 icon & icon back to top cho mobile theo yêu cầu trong phase thực hiện 11/2024: chỉ giữ lại icon live chat trên mobile
+    - nếu yêu cầu giữ lại như cũ thì bỏ những thay đổi ở dưới đây
+ */
+@media screen and (max-width: 540px) {
+    #back-to-top.show {
+        display: none !important;
+        opacity: 0;
+        /* opacity: 1;
+        display: flex !important; */
+    }
+    .always-on>div.group-cart,
+    .always-on>div.group-call {
+        display: none !important;
+        opacity: 0;
+    }
+    .js_always_on_bottom, 
+    ._js_back_top {
+        transform: unset;
+    }
+    .always-on {
+        bottom: 35px;
+    }
+    .always-on>div.group-chat {
+        bottom: 0;
+    }
+}
+
+/* add bóng chat và ẩn 3 icon always-on: 11/2/2025  */
+/* -- custom bóng chat */
+#livechat-sop>div>div:nth-of-type(1){
+    right: 10px !important;
+    /* bottom: 10px !important; */
+}
+/* -- ẩn 3 icon */
+.always-on {
+    display: none;
+}
+/* di chuyển nút back top */
+#back-to-top {
+    bottom: 80px;
+    width: 56px;
+    height: 56px;
+}
