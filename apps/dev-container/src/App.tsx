@@ -10,7 +10,7 @@ function App() {
         <p>Main content</p>
       </main>
 
-      <fpt-footer />
+      <fpt-footer variant="enterprise" />
     </div>
   );
 }
