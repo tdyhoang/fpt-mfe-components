@@ -1,17 +1,41 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted, computed } from "vue";
+import { useRoute, RouterView } from "vue-router";
+
+const loadMFEScript = (id: string, src: string) => {
+  if (document.getElementById(id)) return;
+  const script = document.createElement("script");
+  script.id = id;
+  script.src = src;
+  script.async = true;
+  document.body.appendChild(script);
+};
+
+onMounted(() => {
+  loadMFEScript("fpt-header", "http://localhost:5001/fpt-header.js");
+  loadMFEScript("fpt-footer", "http://localhost:5002/fpt-footer.js");
+});
+
+const route = useRoute();
+
+const footerVariant = computed(() => {
+  return route.path.includes("khach-hang-doanh-nghiep")
+    ? "enterprise"
+    : "consumer";
+});
+</script>
 
 <template>
   <fpt-header />
 
-  <main class="content">
-    <h1>Vue Container</h1>
-    <p>Main content</p>
+  <main class="main">
+    <RouterView />
   </main>
 
-  <fpt-footer />
+  <fpt-footer :variant="footerVariant" />
 </template>
 
-<style scoped>
+<style>
 .logo {
   height: 6em;
   padding: 1.5em;
