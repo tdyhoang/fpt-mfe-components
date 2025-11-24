@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ variant }) => {
               </div>
 
               <div className="col-xs-12 col-sm-7 img-footer-1">
-                <a href="https://fptjobs.com/" target="_blank" title="FPT Jobs">
+                <a href="https://fptjobs.com/" target="_blank" title="FPT Jobs" rel="noreferrer">
                   <img
                     className="img-responsive pull-right"
                     src="https://fpt.vn/storage/upload/images/banners/associated/fptjobs_new.png"
@@ -321,7 +321,7 @@ const Footer: React.FC<FooterProps> = ({ variant }) => {
               <a
                 href="http://online.gov.vn/Home/WebDetails/35561"
                 target="_blank"
-                className="img"
+                className="img" rel="noreferrer"
               >
                 <img
                   alt="FPT Telecom"
@@ -449,7 +449,7 @@ const Footer: React.FC<FooterProps> = ({ variant }) => {
             <a
               href="http://online.gov.vn/Home/WebDetails/35561"
               target="_blank"
-              className="img"
+              className="img" rel="noreferrer"
             >
               <img
                 alt="FPT Telecom"

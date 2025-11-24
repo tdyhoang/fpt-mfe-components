@@ -3,10 +3,9 @@ import { BrowserRouter, useLocation } from "react-router";
 
 import "./App.css";
 
-const loadMFEScript = (id: string, src: string) => {
-  if (document.getElementById(id)) return;
+const loadMFEScript = (src: string) => {
+  if (document.querySelector(`script[src="${src}"]`)) return;
   const script = document.createElement("script");
-  script.id = id;
   script.src = src;
   script.async = true;
   document.body.appendChild(script);
@@ -35,8 +34,8 @@ const AppLayout = () => {
 
 function App() {
   useEffect(() => {
-    loadMFEScript("fpt-header", "http://localhost:5001/fpt-header.js");
-    loadMFEScript("fpt-footer", "http://localhost:5002/fpt-footer.js");
+    loadMFEScript("http://localhost:5005/latest/fpt-header.js");
+    loadMFEScript("http://localhost:5005/latest/fpt-footer.js");
   }, []);
 
   return (
@@ -47,21 +46,3 @@ function App() {
 }
 
 export default App;
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "fpt-header": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      >;
-
-      "fpt-footer": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      > & {
-        variant?: "consumer" | "enterprise";
-      };
-    }
-  }
-}

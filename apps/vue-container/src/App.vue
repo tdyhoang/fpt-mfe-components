@@ -2,18 +2,28 @@
 import { onMounted, computed } from "vue";
 import { useRoute, RouterView } from "vue-router";
 
-const loadMFEScript = (id: string, src: string) => {
-  if (document.getElementById(id)) return;
-  const script = document.createElement("script");
-  script.id = id;
-  script.src = src;
-  script.async = true;
-  document.body.appendChild(script);
+const loadScript = (src: string) => {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src="${src}"]`)) {
+      resolve(true);
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
 };
 
-onMounted(() => {
-  loadMFEScript("fpt-header", "http://localhost:5001/fpt-header.js");
-  loadMFEScript("fpt-footer", "http://localhost:5002/fpt-footer.js");
+onMounted(async () => {
+  await loadScript("http://localhost:5005/libs/vendor.js");
+
+  await Promise.all([
+    loadScript("http://localhost:5005/latest/fpt-header.js"),
+    loadScript("http://localhost:5005/latest/fpt-footer.js"),
+  ]);
 });
 
 const route = useRoute();

@@ -8,11 +8,11 @@ Thêm đoạn mã sau vào thẻ `<head>` của trang web. Lưu ý: File `vendor
 
 ```html
 <!-- Core Runtime (React 19 Shared) -->
-<script src="https://fpt-mfe.pages.dev/libs/vendor.js" />
+<script src="https://fpt-mfe-components.pages.dev/libs/vendor.js" />
 
 <!-- Components -->
-<script src="https://fpt-mfe.pages.dev/latest/fpt-header.js" async />
-<script src="https://fpt-mfe.pages.dev/latest/fpt-footer.js" async />
+<script src="https://fpt-mfe-components.pages.dev/latest/fpt-header.js" async />
+<script src="https://fpt-mfe-components.pages.dev/latest/fpt-footer.js" async />
 ```
 
 ## 2. Sử dụng Component

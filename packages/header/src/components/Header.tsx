@@ -1,15 +1,20 @@
 import React from "react";
 import TopBar from "./TopBar";
 import MainNavbar from "./MainNavbar";
+import ErrorBoundary from "./ErrorBoundary";
 
 const Header: React.FC = () => {
   return (
-    <>
+    <ErrorBoundary>
       <header className={`header-menu header_area}`}>
-        <TopBar />
-        <MainNavbar />
+        <ErrorBoundary>
+          <TopBar />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <MainNavbar />
+        </ErrorBoundary>
       </header>
-    </>
+    </ErrorBoundary>
   );
 };
 

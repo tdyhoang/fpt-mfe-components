@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const IPv6Logo = () => {
-  const [dateString, setDateString] = useState("");
-
-  useEffect(() => {
-    const o = new Date();
-    const n = String(o.getDate()).padStart(2, "0");
-    const t = String(o.getMonth() + 1).padStart(2, "0");
-    const e = o.getFullYear();
-    setDateString(`${e}-${n}-${t}`);
-  }, []);
+  const [dateString] = useState(() => {
+    const date = new Date();
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${year}-${day}-${month}`;
+  });
 
   return (
     <div data-align="center" id="ipv6_enabled_www_test_logo">

@@ -5,25 +5,29 @@ export const useRemoteConfig = <T>(configName: string, fallbackData: T): T => {
 
   useEffect(() => {
     const fetchConfig = async () => {
-      const configUrl = `/config/${configName}.json`;
-
       try {
-        const response = await fetch(configUrl);
+        const timestamp = new Date().getTime();
+        const url = `/config/${configName}.json?t=${timestamp}`;
+
+        const response = await fetch(url);
         if (response.ok) {
-          const json = await response.json();
+          const json = (await response.json()) as T;
           setData(json);
         } else {
           console.warn(
-            `[FPT-MFE] Failed to load config: ${configName}, using fallback.`
+            `[FPT-MFE-COMPONENTS] Failed to load config: ${configName}, using fallback.`
           );
         }
       } catch (error) {
-        console.error(`[FPT-MFE] Error loading config: ${configName}`, error);
+        console.error(
+          `[FPT-MFE-COMPONENTS] Error loading config: ${configName}`,
+          error
+        );
       }
     };
 
-    fetchConfig();
-  }, [configName]);
+    void fetchConfig();
+  }, [configName, fallbackData]);
 
   return data;
 };

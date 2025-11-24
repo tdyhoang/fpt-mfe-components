@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Footer from "./components/Footer";
+import ErrorBoundary from "./components/ErrorBoundary";
 import { LEGACY_CSS } from "./styles/legacy-css";
 
 class FPTFooterElement extends HTMLElement {
@@ -129,7 +130,13 @@ class FPTFooterElement extends HTMLElement {
 
     this.root.render(
       <React.StrictMode>
-        <Footer variant={variant} />
+        <ErrorBoundary
+          fallback={
+            <div style={{ height: "70px", background: "#f8f9fa" }}></div>
+          }
+        >
+          <Footer variant={variant} />
+        </ErrorBoundary>
       </React.StrictMode>
     );
   }

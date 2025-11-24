@@ -80,9 +80,9 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FPT Micro Frontend - CDN Demo</title>
-    <script src="/libs/vendor.js" />
-    <script src="/latest/fpt-header.js" async />
-    <script src="/latest/fpt-footer.js" async />
+    <script src="/libs/vendor.js"></script>
+    <script src="/latest/fpt-header.js" async></script>
+    <script src="/latest/fpt-footer.js" async></script>
     <style>
         body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: #f4f4f4; }
         .host-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; min-height: 60vh; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05);  }
@@ -94,14 +94,14 @@ try {
     </style>
 </head>
 <body>
-    <fpt-header />
+    <fpt-header></fpt-header>
     <main class="host-container">
         <span class="status-badge">System Ready</span>
         <h1>Host Application</h1>
         <p>Trang web này đang tải Header và Footer từ hệ thống Private CDN.</p>
         <p>Trạng thái: <strong>✅ Ready for Production</strong></p>
     </main>
-    <fpt-footer variant="enterprise" />
+    <fpt-footer variant="enterprise"></fpt-footer>
 </body>
 </html>`;
   fs.writeFileSync(path.join(distDir, "index.html"), htmlContent);

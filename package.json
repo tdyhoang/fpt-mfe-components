@@ -1,25 +1,43 @@
 {
   "name": "fpt-mfe-components",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:cdn": "node scripts/build-cdn.js"
+    "build": "node scripts/build-cdn.js",
+    "serve": "serve dist_cdn -l 5005 --cors",
+    "dev:react": "pnpm --filter dev-container dev",
+    "dev:vue": "pnpm --filter vue-container dev",
+    "start:all": "concurrently \"pnpm run serve\" \"pnpm run dev:vue\" \"pnpm run dev:react\"",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.20.0",
   "devDependencies": {
+    "@eslint/js": "^9.39.1",
     "@typescript-eslint/eslint-plugin": "^8.47.0",
     "@typescript-eslint/parser": "^8.47.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "serve": "^14.2.5",
     "typescript": "~5.9.3",
+    "typescript-eslint": "^8.47.0",
     "wrangler": "^4.50.0"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "pnpm run build"
+    ]
   }
 }

@@ -1,10 +1,22 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import React, { StrictMode } from "react";
+import ReactDOM, { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.tsx";
 
-createRoot(document.getElementById('root')!).render(
+declare global {
+  interface Window {
+    React: typeof React;
+    ReactDOM: typeof ReactDOM;
+  }
+}
+
+if (typeof window !== "undefined") {
+  window.React = React;
+  window.ReactDOM = ReactDOM;
+}
+
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-)
+  </StrictMode>
+);

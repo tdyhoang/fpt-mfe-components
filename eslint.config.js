@@ -1,6 +1,3 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
-
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -18,12 +15,12 @@ export default tseslint.config(
       js.configs.recommended,
       ...tseslint.configs.recommendedTypeChecked,
       pluginReactConfig,
-      reactHooks.configs.recommended,
+      reactHooks.configs.flat.recommended,
     ],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: true,
+        projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
       globals: {
@@ -32,7 +29,7 @@ export default tseslint.config(
     },
     settings: {
       react: {
-        version: "detect",
+        version: "19",
       },
     },
     plugins: {
@@ -40,7 +37,7 @@ export default tseslint.config(
     },
     rules: {
       "react-refresh/only-export-components": "warn",
+      "react/react-in-jsx-scope": "off",
     },
-  },
-  storybook.configs["flat/recommended"]
+  }
 );

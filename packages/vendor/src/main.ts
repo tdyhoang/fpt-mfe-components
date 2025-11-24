@@ -1,7 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-(window as any).React = React;
-(window as any).ReactDOM = ReactDOM;
+declare global {
+  interface Window {
+    React: typeof React;
+    ReactDOM: typeof ReactDOM;
+  }
+}
+
+if (typeof window !== "undefined") {
+  window.React = React;
+  window.ReactDOM = ReactDOM;
+}
 
 console.log("FPT Vendor: React 19 Runtime Loaded");
