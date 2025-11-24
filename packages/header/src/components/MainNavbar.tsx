@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import SearchBox from "./SearchBox";
-import { MAIN_MENU, type MenuLink } from "../data/menu.data";
+import { MAIN_MENU, type MenuItem } from "../data/menu.data";
+import { useRemoteConfig } from "../hooks/useRemoteConfig";
 import { useLocation } from "../hooks/useLocation";
 import { useCustomerSegment } from "../hooks/useCustomerSegment";
+
+interface HeaderConfig {
+  mainMenu: MenuItem[];
+}
 
 const MainNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,7 +18,12 @@ const MainNavbar: React.FC = () => {
 
   const { displayLocation, openLocationPicker } = useLocation();
 
-  const renderSubLinks = (links: MenuLink[]) => (
+  const config = useRemoteConfig<HeaderConfig>("header", {
+    mainMenu: MAIN_MENU,
+  });
+  const menuItems = config.mainMenu;
+
+  const renderSubLinks = (links: any[]) => (
     <ul className="list-child-menu">
       {links.map((link, idx) => (
         <li key={idx} className="menu-item menu-item-lv-3">
@@ -82,7 +92,7 @@ const MainNavbar: React.FC = () => {
             </div>
 
             <ul className="nav navbar-nav">
-              {MAIN_MENU.map((item) => (
+              {menuItems.map((item) => (
                 <li
                   key={item.id}
                   className={`menu-item menu-item-lv-1 dropdown ${

@@ -1,41 +1,48 @@
-### **Tích hợp Components**
+# FPT MFE Components Integration Guide
 
-**1. Script Endpoints**
+Tài liệu hướng dẫn tích hợp Header và Footer chung cho các website thuộc hệ sinh thái FPT.
 
-- **Header:** `http://localhost:5001/fpt-header.js`
-- **Footer:** `http://localhost:5002/fpt-footer.js`
+## 1. Nhúng Script (CDN)
 
-_Ghi chú: URL mẫu, thay thế bằng endpoint thực tế._
-
-**Triển khai:** Load script tại cuối tag `<body>`.
+Thêm đoạn mã sau vào thẻ `<head>` của trang web. Lưu ý: File `vendor.js` chỉ cần load 1 lần duy nhất cho cả Header và Footer.
 
 ```html
-<script type="module" src="[URL_HEADER_SCRIPT]"></script>
-<script type="module" src="[URL_FOOTER_SCRIPT]"></script>
+<!-- Core Runtime (React 19 Shared) -->
+<script src="https://fpt-mfe.pages.dev/libs/vendor.js" />
+
+<!-- Components -->
+<script src="https://fpt-mfe.pages.dev/latest/fpt-header.js" async />
+<script src="https://fpt-mfe.pages.dev/latest/fpt-footer.js" async />
 ```
 
-**2. Sử dụng**
+## 2. Sử dụng Component
 
-Các tag là Custom Elements (Web Components), được đăng ký global.
+Sử dụng như thẻ HTML thông thường tại vị trí mong muốn trong `<body>`.
 
-- **Header Component:** `<fpt-header></fpt-header>`
-- **Footer Component:** `<fpt-footer></fpt-footer>`
+### Header
 
-**3. Ví dụ Tích hợp**
+Component tự động load cấu hình menu từ CDN.
 
 ```html
-<!DOCTYPE html>
-<html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Integration Example</title>
-  </head>
-  <body>
-    <fpt-header></fpt-header>
-    <main><!-- App content --></main>
-    <fpt-footer></fpt-footer>
-    <script type="module" src=".../fpt-header.js"></script>
-    <script type="module" src=".../fpt-footer.js"></script>
-  </body>
-</html>
+<fpt-header />
 ```
+
+### Footer
+
+Hỗ trợ 2 giao diện: Khách hàng cá nhân (`consumer`) và Doanh nghiệp (`enterprise`).
+
+```html
+<!-- Mặc định (Consumer) -->
+<fpt-footer />
+
+<!-- Hoặc chỉ định rõ variant -->
+<fpt-footer variant="consumer" />
+<fpt-footer variant="enterprise" />
+```
+
+## 3. Cấu hình nội dung
+
+Menu và Banner được quản lý qua file JSON tĩnh, không cần deploy lại code khi thay đổi nội dung.
+
+- Header Config: `configs/header.json`
+- Footer Config: `configs/footer.json`

@@ -8,17 +8,22 @@ export default defineConfig({
     lib: {
       entry: "src/main.tsx",
       name: "FPTFooter",
-      fileName: "fpt-footer",
+      fileName: () => "fpt-footer.js",
       formats: ["umd"],
     },
     rollupOptions: {
-      external: [],
+      external: ["react", "react-dom", "react-dom/client"],
       output: {
-        entryFileNames: "fpt-footer.js",
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "react-dom/client": "ReactDOM",
+        },
       },
     },
+    emptyOutDir: true,
   },
   define: {
-    "process.env": {},
+    "process.env": { NODE_ENV: '"production"' },
   },
 });

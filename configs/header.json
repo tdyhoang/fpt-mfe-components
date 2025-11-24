@@ -1,0 +1,205 @@
+{
+  "mainMenu": [
+    {
+      "id": 1,
+      "title": "Sản phẩm dịch vụ",
+      "url": "javascript:void(0)",
+      "type": "mega",
+      "icon": true,
+      "children": [
+        {
+          "title": "Internet Cáp Quang",
+          "iconUrl": "https://fpt.vn/storage/upload/images/menus/icons/spdv/icon-internet-fpt.png",
+          "links": [
+            {
+              "label": "Internet cá nhân",
+              "url": "https://fpt.vn/internet-ca-nhan"
+            },
+            {
+              "label": "Internet gia đình",
+              "url": "https://fpt.vn/internet-gia-dinh"
+            },
+            {
+              "label": "Internet game thủ",
+              "url": "https://fpt.vn/internet-game-thu"
+            },
+            {
+              "label": "Internet doanh nghiệp",
+              "url": "https://fpt.vn/internet-doanh-nghiep"
+            }
+          ]
+        },
+        {
+          "title": "Truyền hình & Giải trí",
+          "iconUrl": "https://fpt.vn/storage/upload/images/menus/icons/spdv/icon-fptplay.png",
+          "links": [
+            {
+              "label": "FPT Play",
+              "url": "https://fpt.vn/truyen-hinh-fpt-play"
+            }
+          ]
+        },
+        {
+          "title": "Giám Sát Thông Minh",
+          "iconUrl": "https://fpt.vn/storage/upload/images/menus/icons/spdv/icon-smarthome.png",
+          "links": [
+            {
+              "label": "FPT Camera",
+              "url": "https://fpt.vn/thiet-bi-camera"
+            },
+            {
+              "label": "FPT Smart Home",
+              "url": "https://fpt.vn/thiet-bi-smart-home"
+            }
+          ]
+        },
+        {
+          "title": "Dịch vụ tiện ích",
+          "iconUrl": "https://fpt.vn/storage/upload/images/menus/menu-head/462564079_881786490796767_4512469286751778495_n.png",
+          "links": [
+            {
+              "label": "F-Safe",
+              "url": "https://fpt.vn/bao-mat-f-safe"
+            },
+            {
+              "label": "F-Safe Go",
+              "url": "https://fpt.vn/bao-mat-f-safe-go"
+            },
+            {
+              "label": "Dịch vụ UltraFast",
+              "url": "https://fpt.vn/ultrafast"
+            },
+            {
+              "label": "Dịch vụ HyperFast",
+              "url": "https://fpt.vn/hyperfast",
+              "isNew": true
+            }
+          ]
+        },
+        {
+          "title": "Sức khỏe & Y tế",
+          "iconUrl": "https://fpt.vn/storage/upload/images/menus/menu-head/icon-fpt-medicare.png",
+          "links": [
+            {
+              "label": "FPT MediCare",
+              "url": "https://fpt.vn/thiet-bi-medicare"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Tin tức & khuyến mãi",
+      "url": "https://fpt.vn/tin-tuc",
+      "type": "link"
+    },
+    {
+      "id": 3,
+      "title": "Ưu đãi",
+      "url": "javascript:void(0)",
+      "type": "dropdown",
+      "icon": true,
+      "subLinks": [
+        {
+          "label": "Khách hàng thân thiết",
+          "url": "https://fpt.vn/khach-hang-than-thiet"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Hỗ trợ",
+      "url": "javascript:void(0)",
+      "type": "mega",
+      "icon": true,
+      "children": [
+        {
+          "title": "Hỗ trợ thông tin",
+          "iconUrl": "https://fpt.vn/storage/upload/images/menus/icons/support-mn/icon-ho-tro-thong-tin.png",
+          "links": [
+            {
+              "label": "Câu hỏi thường gặp",
+              "url": "https://fpt.vn/ho-tro/cau-hoi-thuong-gap"
+            },
+            {
+              "label": "Hướng dẫn sử dụng",
+              "url": "https://fpt.vn/ho-tro/huong-dan-su-dung"
+            },
+            {
+              "label": "Chính sách và thủ tục",
+              "url": "https://fpt.vn/ho-tro/huong-dan-thu-tuc"
+            },
+            {
+              "label": "Quản lý chất lượng dịch vụ",
+              "url": "https://fpt.vn/ho-tro/quan-ly-chat-luong-dich-vu"
+            },
+            {
+              "label": "Điều khoản bảo mật",
+              "url": "https://fpt.vn/ho-tro/dieu-khoan-bao-mat"
+            }
+          ]
+        },
+        {
+          "title": "Hỗ trợ kỹ thuật",
+          "iconUrl": "https://fpt.vn/storage/upload/images/menus/icons/support-mn/icon-ho-tro-ky-thuat.png",
+          "links": [
+            {
+              "label": "Hướng dẫn cài đặt",
+              "url": "https://fpt.vn/ho-tro/huong-dan-cai-dat"
+            },
+            {
+              "label": "Xử lý sự cố",
+              "url": "https://fpt.vn/ho-tro/xu-ly-su-co"
+            }
+          ]
+        },
+        {
+          "title": "Nhân viên hỗ trợ",
+          "iconUrl": "https://fpt.vn/storage/upload/images/menus/icons/support-mn/icon-lien-he-24-7.png",
+          "links": [
+            {
+              "label": "Tổng đài 19006600",
+              "url": "tel:19006600"
+            },
+            {
+              "label": "Ứng dụng Hi FPT",
+              "url": "https://fpt.vn/hi-fpt"
+            },
+            {
+              "label": "Kênh Zalo OA",
+              "url": "https://zalo.me/fpttelecom"
+            }
+          ]
+        },
+        {
+          "title": "Phòng giao dịch",
+          "iconUrl": "https://fpt.vn/storage/upload/images/menus/icons/support-mn/device-message.png",
+          "links": [
+            {
+              "label": "Địa điểm",
+              "url": "https://fpt.vn/vi/khach-hang-ca-nhan/ho-tro/lien-he-24-7/diem-giao-dich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Khác",
+      "url": "javascript:void(0)",
+      "type": "dropdown",
+      "icon": true,
+      "subLinks": [
+        {
+          "label": "Member FPT",
+          "url": "https://fpt.vn/member"
+        },
+        {
+          "label": "Thanh toán hóa đơn",
+          "url": "https://fpt.vn/pay/vi/auth"
+        }
+      ]
+    }
+  ]
+}

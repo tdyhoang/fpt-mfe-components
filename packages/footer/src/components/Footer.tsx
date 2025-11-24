@@ -1,6 +1,7 @@
 import React from "react";
-import { FOOTER_DATA } from "../data/footer.data";
+import { FOOTER_DATA, type FooterData } from "../data/footer.data";
 import { IPv6Logo } from "./IPv6Logo";
+import { useRemoteConfig } from "../hooks/useRemoteConfig";
 
 interface FooterProps {
   variant: "consumer" | "enterprise";
@@ -8,7 +9,12 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ variant }) => {
   const isEnterprise = variant === "enterprise";
-  const data = isEnterprise ? FOOTER_DATA.enterprise : FOOTER_DATA.consumer;
+
+  const fullConfig = useRemoteConfig<
+    Record<"consumer" | "enterprise", FooterData>
+  >("footer", FOOTER_DATA);
+
+  const data = isEnterprise ? fullConfig.enterprise : fullConfig.consumer;
 
   if (isEnterprise) {
     return (

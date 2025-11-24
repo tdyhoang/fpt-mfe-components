@@ -8,17 +8,22 @@ export default defineConfig({
     lib: {
       entry: "src/main.tsx",
       name: "FPTHeader",
-      fileName: "fpt-header",
+      fileName: () => "fpt-header.js",
       formats: ["umd"],
     },
     rollupOptions: {
-      external: [],
+      external: ["react", "react-dom", "react-dom/client"],
       output: {
-        entryFileNames: "fpt-header.js",
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "react-dom/client": "ReactDOM",
+        },
       },
     },
+    emptyOutDir: true,
   },
   define: {
-    "process.env": {},
+    "process.env": { NODE_ENV: '"production"' },
   },
 });
