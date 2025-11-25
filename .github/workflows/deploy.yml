@@ -21,7 +21,6 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10
           run_install: false
 
       - name: Setup Node.js
@@ -41,5 +40,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist_cdn --project-name=fpt-mfe
+          command: pages deploy dist_cdn --project-name=fpt-mfe-components
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

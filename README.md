@@ -8,11 +8,17 @@ Thêm đoạn mã sau vào thẻ `<head>` của trang web. Lưu ý: File `vendor
 
 ```html
 <!-- Core Runtime (React 19 Shared) -->
-<script src="https://fpt-mfe-components.pages.dev/libs/vendor.js" />
+<script src="https://fpt-mfe-components.pages.dev/libs/vendor.js"></script>
 
 <!-- Components -->
-<script src="https://fpt-mfe-components.pages.dev/latest/fpt-header.js" async />
-<script src="https://fpt-mfe-components.pages.dev/latest/fpt-footer.js" async />
+<script
+  src="https://fpt-mfe-components.pages.dev/latest/fpt-header.js"
+  async
+></script>
+<script
+  src="https://fpt-mfe-components.pages.dev/latest/fpt-footer.js"
+  async
+></script>
 ```
 
 ## 2. Sử dụng Component
@@ -36,8 +42,8 @@ Hỗ trợ 2 giao diện: Khách hàng cá nhân (`consumer`) và Doanh nghiệp
 <fpt-footer />
 
 <!-- Hoặc chỉ định rõ variant -->
-<fpt-footer variant="consumer" />
-<fpt-footer variant="enterprise" />
+<fpt-footer variant="consumer"></fpt-footer>
+<fpt-footer variant="enterprise"></fpt-footer>
 ```
 
 ## 3. Cấu hình nội dung
